@@ -2,21 +2,47 @@
 int_var = int(15)
 n_1 = complex(5, 6)
 my_str = "простая строка"
-tup_var = (tuple('обычная строка'))
+tuple_var = (1, 2, 3, 4, 5)
 abanchof = {400, None, "text", True}
+list_var = list("1 fr 23 f")
 my_dict = dict(key_1='val_1', key_2='val_2')
 bool_var = bool()
 bytes_var = bytes([10, 20, 30, 40])
 none_var = None
 
-list_arr = [int_var, n_1, my_str, tup_var, abanchof, my_dict, bool_var, bytes_var, none_var]
+list_arr = [int_var, n_1, my_str, tuple_var, abanchof, list_var, my_dict,
+            bool_var, bytes_var, none_var]
 
-print(list_arr)
+print(type(list_arr[1]))
 
-print(len(list_arr))
+for el in list_arr:
+    print(type(el))
 
 # 2
+list_arr_reverse = []
+for item in list_var:
+    if list_var[1] == "1":
+        list_arr_reverse.append(4)
+    elif item == 1:
+        list_arr_reverse.append(5)
+    else:
+        list_arr_reverse.append(0)
+
+print(list_var)
+print(list_arr_reverse)
+
 # 3
+month = int(input("Введите номер месяца: "))
+month_list = list("Январь")
+month_dict = {'python': 1991, 'java': 1995, 'c++': 1983}
+for elll in month_dict:
+    print(elll)
+
+print(sorted(month_dict))
+print(month_list[1])
+
+
 # 4
-# 5
-# 6
+str_input = input("Введите предложение: ")
+for el in str_input:
+    print(el)
