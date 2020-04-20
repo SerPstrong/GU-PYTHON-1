@@ -19,13 +19,12 @@ for el in list_arr:
     print(type(el))
 
 # 2
-list_arr_reverse = []
-for item in list_var:
-    if list_arr_reverse[item] == 3:
-        list_arr_reverse.append(item)
 
+while true:
+    list_arr_reverse = input()
+for i in range(1, len(list_var), 2):
+    list_var[i - 1], list_var[i] = list_var[i], list_var[i - 1]
 print(list_var)
-print(list_arr_reverse)
 
 # 3
 month = int(input("Введите номер месяца: "))
@@ -36,7 +35,6 @@ for el in month_list:
 
 print(sorted(month_dict))
 print(month_list[1])
-
 
 # 4
 str_input = input("Введите предложение: ")
