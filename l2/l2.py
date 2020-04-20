@@ -21,22 +21,18 @@ for el in list_arr:
 # 2
 list_arr_reverse = []
 for item in list_var:
-    if list_var[1] == "1":
-        list_arr_reverse.append(4)
-    elif item == 1:
-        list_arr_reverse.append(5)
-    else:
-        list_arr_reverse.append(0)
+    if list_arr_reverse[item] == 3:
+        list_arr_reverse.append(item)
 
 print(list_var)
 print(list_arr_reverse)
 
 # 3
 month = int(input("Введите номер месяца: "))
-month_list = list("Январь")
+month_list = list("январь", "февраль")
 month_dict = {'python': 1991, 'java': 1995, 'c++': 1983}
-for elll in month_dict:
-    print(elll)
+for el in month_list:
+    print(el)
 
 print(sorted(month_dict))
 print(month_list[1])
