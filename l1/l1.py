@@ -1,69 +1,101 @@
+#  -------------------------------------------------------- 1 ----------------------------------------------------------
 
-# 1
-name = input("Введите ваше имя: ")
-age = int(input("Введите ваш возраст: "))
-year = 2020 - age
-height = int(input("Введите ваш рост: "))
-print("Привет", name, year, "года рождения")
 
-# 2
-number = int(input("Введите кол-во секунд: "))
-hour = number // 3600
-minutes = (number // 60) % 60
-sec = number % 60
+a = "hello"
+b = "world!"
+print(f"{a}, {b}")
+numb1 = int(input("Enter any number: "))
+numb2 = int(input("Enter any number one more time: "))
+print(f"You have choosen the numbers {numb1} and {numb2}")
+word = input("Enter any word: ")
+print(f"{word} - it's good choice")
 
-if hour < 10 or minutes < 10 or sec < 10:
-    if hour < 10 and minutes < 10 and sec < 10:
-        print(f"0{hour}:0{minutes}:0{sec}")
-    elif hour < 10 and minutes < 10:
-        print(f"0{hour}:0{minutes}:{sec}")
-    elif hour < 10 and sec < 10:
-        print(f"0{hour}:{minutes}:0{sec}")
-    elif minutes < 10 and sec < 10:
-        print(f"{hour}:0{minutes}:0{sec}")
-    elif hour < 10:
-        print(f"0{hour}:{minutes}:{sec}")
-    elif minutes < 10:
-        print(f"{hour}:0{minutes}:{sec}")
+#  -------------------------------------------------------- 2 ----------------------------------------------------------
+
+
+time = int(input("Enter the time in seconds: "))
+hours = time // 3600
+minutes = (time // 60) - (hours * 60)
+seconds = time % 60
+print(f"{hours:02}:{minutes:02}:{seconds:02}")
+
+#  ------------------------------------------- вариант решения ---------------------------------------------------------
+
+
+s = int(input("Введите время в секундах, для пересчёта в формат чч:мм:сс: - "))
+m = int(s / 60)
+h = int(m / 60)
+
+print(f"{h:02}:{m % 60:02}:{s % 60:02}")
+
+#  -------------------------------------------------------- 3 ----------------------------------------------------------
+
+
+n = input("Enter an integer: ")
+
+print(f"{n} + {n + n} + {n + n + n} = {int(n) + int(n + n) + int(n + n + n)}")
+
+#  -------------------------------------------------------- 4 ----------------------------------------------------------
+
+
+num_init = int(input("Введите целое положительное число: "))
+greatest_dig = 0  # Переменная для хранения текущего максимума
+num = num_init  # Переменная для хранения оставшейся части числа (см цикл)
+
+while num > 0:  # Выполняем цикл, пока отсечения цифр числа (см ниже) его не обнулили
+    digit = num % 10  # Определяем последнюю цифру
+    if digit > greatest_dig:  # Сравниваем ее с текущим максимумом
+        greatest_dig = digit  # При необходимости меняем текущий максимум
+        if greatest_dig == 9:  # Это условие не обязательно, но экономит время исполнения. Цифр больше 9 не бывает.
+            break
+    num = num // 10  # Отсекаем от числа последнюю цифру
+
+print(f"Наибольшая цифра в числе {num_init} равна {greatest_dig}")
+
+
+#  ------------------------------------------- вариант решения ---------------------------------------------------------
+
+# Функция с рекурсией
+
+def num_max(num):
+    if num < 10:
+        print(num)
     else:
-        print(f"{hour}:{minutes}:0{sec}")
+        num_max(num // 10)
+        print(num % 10)
+
+
+num_max(int(input("Введите число: ")))
+
+#  -------------------------------------------------------- 5 ----------------------------------------------------------
+
+
+revenue = float(input("Введите значение выручки (тугрики) - "))
+costs = float(input("Введите значение издержек (тугрики) - "))
+result = revenue - costs
+if result > 0:
+    print(f"Поздравляю! Ваша компания работает с прибылью {result} тугриков!")
+    print(f"Рентабельность выручки составила {result / revenue:.3f}")
+    personal_n = int(input("Сколько счастливых целочисленных сотрудников работает в Вашей компании? "))
+    print(f"Если Вы раздадите прибыль компании сотрудникам, то каждый получит по {result / personal_n:.3f} тугриков.")
+elif result < 0:
+    print(f"Увы, Ваша компания пока сработала с убытком {-result} тугриков! Старайтесь, у Вас все получится!")
 else:
-    print(f"{hour}:{minutes}:{sec}")
+    print(f"Ноль - это тоже хороший результат! Попросите у друга тугрик и пропейте его вместе за стабильность!")
 
-# 3
-n = input("Введите число для зад. 3: ")
-n1 = int(n)
-n2 = int(n + n)
-n3 = int(n + n + n)
-print(n1 + n2 + n3)
+#  -------------------------------------------------------- 6 ----------------------------------------------------------
 
-# 4
-num = int(input("Введите число для поиска макс.: "))
-num_max = num % 10
-while num > 0:
-    num = num // 10
-    a_num = num % 10
-    if a_num > num_max:
-        num_max = a_num
-print("Максимальное число", num_max)
 
-# 5
-revenue = int(input("Введите выручку: "))
-costs = 6000
-if revenue > costs:
-    print("выручка больше издержек: ")
-    profitability = ((revenue - costs) // (revenue / 100))
-    print("Рентабельность: ", profitability, "%")
-else:
-    print("издержки больше выручки")
-person = int(input("Введите кол-во сотрудников: "))
-print("Прибыль на одного сотрудника: ", (revenue - costs) // person)
+while True:
+    days = 1
+    start_km = int(input("Стартовый результат: "))
+    last_km = int(input("Финальный результат: "))
+    if start_km <= 0 or last_km < 0:
+        print("Результаты должены быть больше нуля. Стартовое значение != 0.")
+    else:
+        while start_km < last_km:
+            start_km += start_km * 0.1
+            days += 1
 
-# 6
-a = 12
-b = 100
-i = 1
-while a <= b:
-    a += int(a / 100 * 10)
-    print("день №", i, "=", a)
-    i += 1
+        print(f"Спортсмен добьется результат за {days} дней")
+        break
