@@ -1,5 +1,6 @@
-from time import time
-from random import random
+import func
 
-print(time())
-print(random())
+func.show_msg()
+print(func.simple_calc())
+
+# 1
