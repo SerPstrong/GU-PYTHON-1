@@ -6,3 +6,5 @@ print(func.simple_calc())
 
 # 1
 print(w1.show_msg(2, 4, 60))
+
+# 2
