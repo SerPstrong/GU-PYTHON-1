@@ -1,7 +1,14 @@
 # 1
+class TrafficLight:
+    color = "red"
+
+    def running(self):
+        print(f"Двигатель запущен")
 
 
-# 2
+a = TrafficLight()
+print(a.running())
+print(a.color)
 
 
 # 3
