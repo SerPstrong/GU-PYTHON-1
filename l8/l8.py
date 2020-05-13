@@ -9,6 +9,8 @@ class Data:
 b = Data.date(22, 10, 2020)
 
 print(b)
+
+
 # 2
 
 
@@ -16,8 +18,32 @@ print(b)
 
 
 # 4
-class warehouse:
+class Warehouse:
+    pass
 
+
+class Office_equipment:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+
+class Printer(Office_equipment):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+
+class Scanner(Office_equipment):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+
+class Copier(Office_equipment):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
 
 # 5
 
