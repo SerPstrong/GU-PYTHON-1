@@ -1,3 +1,4 @@
+
 # 1
 class Data:
     @classmethod
