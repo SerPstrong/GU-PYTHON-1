@@ -1,18 +1,14 @@
 # 1
 class Data:
-    @classmethod
-    def date1(cls, x):
-        return int(x)
+    def date(self, day, month, year):
+        return int(f"{day}+{month}+{year}")
 
     # def date2(self):
 
 
-a = "123"
+b = Data.date(22, 10, 2020)
 
-# print(a + 1)
-b = Data.date1(a)
-
-print(b+1)
+print(b)
 # 2
 
 
@@ -20,6 +16,7 @@ print(b+1)
 
 
 # 4
+class warehouse:
 
 
 # 5
