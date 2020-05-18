@@ -2,7 +2,6 @@
 
 
 class Data:
-<<<<<<< HEAD
     def __init__(self, day_month_year):
         self.day_month_year = str(day_month_year)
 
@@ -610,10 +609,6 @@ class Show_dict_cards:
 class Show_dict_storage_points:
     def __init__(self, dict_storage_points):
         self._dict_storage_points = dict_storage_points
-=======
-    def date(self, day, month, year):
-        return int(f"{day}+{month}+{year}")
->>>>>>> a0fd50c16a1b71fefb9e9906d41a91db47884130
 
     def __call__(self):
         print(f'  {self._dict_storage_points.get_name()}')
@@ -625,7 +620,6 @@ class Show_dict_storage_points:
             sprovider = 'Да' if storage_point.get_provider() else 'Нет'
             print(f'| {storage_point.get_id():12} | {storage_point.get_name():15} | {storage_point.get_description():37} | {sprovider:3} |')
 
-<<<<<<< HEAD
         print('+--------------+-----------------+---------------------------------------+-----+')
 
 class Show_balans_storage_point:
@@ -641,14 +635,6 @@ class Show_balans_storage_point:
             print('+--------------+-----------------+---------------------------------------------+--------------+-------------+--------------+')
             print('|           id | Категория ТМЦ   | Описание                                    |  Цена за ед. |     Остаток |        Сумма |')
             print('+--------------+-----------------+---------------------------------------------+--------------+-------------+--------------+')
-=======
-b = Data.date(22, 10, 2020)
-
-print(b)
-
-
-# 2
->>>>>>> a0fd50c16a1b71fefb9e9906d41a91db47884130
 
             for i in self._storage_point.get_list_cards():
                 _sum = i.get_price() * self._storage_point.calc_balance(i)
@@ -662,41 +648,11 @@ print(b)
 #  -------------------------------------------------------- 7 ----------------------------------------------------------
 
 
-<<<<<<< HEAD
 
 class ComplexNumber:
     def __init__(self, real, imaginary):
         self.real = real
         self.img = imaginary
-=======
-# 4
-class Warehouse:
-    pass
-
-
-class Office_equipment:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-
-
-class Printer(Office_equipment):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-
-
-class Scanner(Office_equipment):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-
-
-class Copier(Office_equipment):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
->>>>>>> a0fd50c16a1b71fefb9e9906d41a91db47884130
 
     def __str__(self):
         return f'{self.real}+{self.img}i' if self.img > 0 else f'{self.real}{self.img}i'
